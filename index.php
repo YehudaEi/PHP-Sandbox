@@ -5,7 +5,7 @@
         );
     }
     
-    if(!is_dir('temp') mkdir('temp');
+    if(!is_dir('temp')) mkdir('temp');
 
     if(isset($_GET['eval']) && isset($_POST['code'])){
         $res = array();
