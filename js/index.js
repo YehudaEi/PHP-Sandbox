@@ -214,6 +214,9 @@ function loadFromLocalStorage() {
 		window.editor.getSession().setValue(text);
 		submitTryit();
 	}
+	else{
+	    alert('Session not exist!');
+	}
 }
 function saveToLocalStorage() {
 	if (typeof(Storage) !== "undefined") {
