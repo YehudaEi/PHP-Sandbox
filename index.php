@@ -40,17 +40,18 @@
     <body>
         <ul class="w3-light-grey">
         	<li class="dropdown">
-        		<button class="w3-button w3-bar-item" title="Show info" onclick='$Id("about").classList.toggle("show")' onblur='$Id("about").classList.remove("show")'>
+        	    <script>let mouseover_about = false, blur_about = false;</script>
+        		<button class="w3-button w3-bar-item" title="Show info" onclick='blur_about=true;$Id("about").classList.toggle("show");' onblur='blur_about=true;if(!mouseover_about){$Id("about").classList.remove("show")}'>
         			<svg style="width: 1em;height: 1em;" viewBox="0 0 52 52" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
         				<rect height="6" rx="3" transform="translate(52 27.52) rotate(180)" width="6" x="23" y="10.76" />
         				<path d="M27,41.24a2,2,0,0,1-2-2v-13H23a2,2,0,0,1,0-4h4a2,2,0,0,1,2,2v15A2,2,0,0,1,27,41.24Z" />
         				<path d="M26,52A26,26,0,1,1,52,26,26,26,0,0,1,26,52ZM26,4A22,22,0,1,0,48,26,22,22,0,0,0,26,4Z" />
         			</svg>
         		</button>
-        		<div class="dropdown-content" id="about">
+        		<div class="dropdown-content" id="about" onmouseover='mouseover_about=true;' onmouseleave='mouseover_about=false;if(blur_about){$Id("about").classList.remove("show")}'>
         			<p><b>About:</b></p>
         			<p>Updated, adapted, and modified by Yehuda Eisenberg.</p>
-        			<p>Github: <a href="https://github.com/YehudaEi/PHP-Sandbox">https://github.com/YehudaEi/PHP-Sandbox</a></p>
+        			<p>Github: <a href="https://github.com/YehudaEi/PHP-Sandbox" target="_blank">https://github.com/YehudaEi/PHP-Sandbox</a></p>
         			<p>Version: 1.0</p>
         			<p>PHP Version: <?php echo phpversion(); ?></p>
         		</div>
